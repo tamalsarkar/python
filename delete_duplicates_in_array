@@ -1,0 +1,14 @@
+'''delete duplicate elements in a given array and you have to mentain the order of input elements example 
+input a[]={1,3,1,2,4} so the output 
+will be {1,3,2,4}'''
+
+l=[3,3,1,2,4,2]
+result=[]
+for i in range (0,len(l)):
+    p=l[i]
+    print(p)
+    x=result.count(p)
+    print(x)
+    if(x==0):
+        result.append(p)
+print(result)
