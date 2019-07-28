@@ -1,0 +1,24 @@
+'''This problem was recently asked by Google.
+
+Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
+
+For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
+
+Bonus: Can you do this in one pass?'''
+
+l=[10, 15, 3, 7]
+k=10
+l.sort()
+a=0 
+b=len(l)-1
+for i in l:
+    if (l[a]+l[b])>k:
+        b-=1
+        i+=1 
+    elif(l[a]+l[b]<k):
+        a+=1 
+        i+=1
+    elif(l[a]+l[b]==k):
+        print("the values are {0} and {1}".format(l[a],l[b]))
+        i+=1
+        break
