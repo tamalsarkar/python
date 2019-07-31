@@ -1,0 +1,23 @@
+'''heap are almost compleat binary tree
+max heap:perent wiil be always greater than child node
+min heap: perent will less or equal to its child nodes
+if a node is at i'th index it's left child would be at (2*i)+1 and right child would be at (2*i)+1
+perent would be at {i-1}/2 flor value this is max heap'''
+def insert(l,loc,p_loc):
+	p=l[loc]
+	l[loc]=l[p_loc]
+	l[p_loc]=p
+	loc=p_loc
+	p_loc=int((loc-1)/2)
+	return loc,p_loc
+
+
+l=[70,50,40,45,35,39,16,10,9]
+val=int (input("enter the value to be inserted"))
+l.append(val)
+loc=len(l)-1
+p_loc=int((loc-1)/2)
+while l[loc]>l[p_loc] and loc>=0 and p_loc>=0:
+	loc,p_loc=insert(l,loc,p_loc)
+print(l)
+
